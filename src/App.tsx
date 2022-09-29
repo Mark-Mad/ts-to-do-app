@@ -3,12 +3,12 @@ import { TodoListItem } from './TodoListItem';
 
 const initialTodos: Todo[] = [
   {
-    text: 'Walk the dog',
+    text: 'Study Pre-Class',
     complete: false,
   },
   {
-    text: 'Write app',
-    complete: true,
+    text: 'Attend In class',
+    complete: false,
   },
 ];
 
