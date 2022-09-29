@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
-import { TodoListItem } from './TodoListItem';
+import { TodoList } from './TodoList';
+import { AddTodoForm } from './AddTodoForm';
 
 const initialTodos: Todo[] = [
   {
-    text: 'Study Pre-Class',
+    text: 'Walk the dog',
     complete: false,
   },
   {
-    text: 'Attend In class',
-    complete: false,
+    text: 'Write app',
+    complete: true,
   },
 ];
 
 function App() {
   const [todos, setTodos] = useState(initialTodos);
 
-  const toggleTodo = (selectedTodo: Todo) => {
+  const toggleTodo: ToggleTodo = (selectedTodo: Todo) => {
     const newTodos = todos.map((todo) => {
       if (todo === selectedTodo) {
         return {
@@ -28,11 +29,16 @@ function App() {
     setTodos(newTodos);
   };
 
+  const addTodo: AddTodo = (text: string) => {
+    const newTodo = { text, complete: false };
+    setTodos([...todos, newTodo]);
+  };
+
   return (
-    <ul>
-      <TodoListItem todo={todos[0]} toggleTodo={toggleTodo} />
-      <TodoListItem todo={todos[1]} toggleTodo={toggleTodo} />
-    </ul>
+    <>
+      <AddTodoForm addTodo={addTodo} />
+      <TodoList todos={todos} toggleTodo={toggleTodo} />
+    </>
   );
 }
 
