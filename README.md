@@ -1,4 +1,4 @@
-Live URL : https://ts-to-do-aplvo9gxq-mark-mad.vercel.app/
+Live URL : https://ts-to-do-app.vercel.app/
 
 # Getting Started with Create React App
 
