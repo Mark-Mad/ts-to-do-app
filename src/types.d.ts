@@ -1,8 +1,8 @@
-interface Todo {
+interface Task {
     text: string;
     complete: boolean;
   }
 
-  type ToggleTodo = (selectedTodo: Todo) => void;
+  type ToggleTask = (selectedTodo: Task) => void;
 
-  type AddTodo = (text: string) => void;
+  type AddFn = (text: string) => void;

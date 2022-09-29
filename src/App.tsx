@@ -1,43 +1,48 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { TodoList } from './TodoList';
-import { AddTodoForm } from './AddTodoForm';
+import { InputForm } from './InputForm';
 
-const initialTodos: Todo[] = [
+/* Start with dummy data
+const sampleData: Task[] = [
   {
-    text: 'Walk the dog',
+    text: 'Study Pre-Class',
     complete: false,
   },
   {
-    text: 'Write app',
+    text: 'Attend In-Class',
     complete: true,
   },
-];
+];*/
 
 function App() {
-  const [todos, setTodos] = useState(initialTodos);
+  // const [tasks, setTasks] = useState(sampleData);
+  const [tasks, setTasks] = useState<Task[]>([]);
 
-  const toggleTodo: ToggleTodo = (selectedTodo: Todo) => {
-    const newTodos = todos.map((todo) => {
-      if (todo === selectedTodo) {
+  const toggleFn: ToggleTask = (selectedTask: Task) => {
+    const newTodos = tasks.map((item) => {
+      if (item === selectedTask) {
         return {
-          ...todo,
-          complete: !todo.complete,
+          ...item,
+          complete: !item.complete,
         };
       }
-      return todo;
+      return item;
     });
-    setTodos(newTodos);
+    setTasks(newTodos);
   };
 
-  const addTodo: AddTodo = (text: string) => {
+  const add: AddFn = (text: string) => {
     const newTodo = { text, complete: false };
-    setTodos([...todos, newTodo]);
+    setTasks([...tasks, newTodo]);
   };
 
   return (
     <>
-      <AddTodoForm addTodo={addTodo} />
-      <TodoList todos={todos} toggleTodo={toggleTodo} />
+      <div className="form-control">
+      <h3>To Do App With TypeScript</h3>
+      <InputForm addTodo={add} />
+      <TodoList tasks={tasks} toggleTodo={toggleFn} />
+      </div>
     </>
   );
 }
