@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 
-interface Props {
-  addTodo: AddFn;
-}
-
 export const InputForm: React.FC<Props> = ({ addTodo }) => {
   const [text, setText] = useState("");
 
