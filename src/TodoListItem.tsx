@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const TodoListItem: React.FC<Props2> = ({ todo, toggleTodo }) => {
+const TodoListItem: React.FC<Props2> = ({ todo, toggleTodo }) => {
   return (
     <li>
       <label
@@ -21,3 +21,5 @@ export const TodoListItem: React.FC<Props2> = ({ todo, toggleTodo }) => {
     </li>
   );
 };
+
+export default TodoListItem

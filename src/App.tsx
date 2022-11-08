@@ -1,6 +1,6 @@
 import  { useState } from 'react';
-import { TodoList } from './TodoList';
-import { InputForm } from './InputForm';
+import  TodoList  from './TodoList';
+import  InputForm  from './InputForm';
 import './App.css'
 
 /* Start with dummy data

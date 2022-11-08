@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const InputForm: React.FC<Props> = ({ addTodo }) => {
+const InputForm: React.FC<Props> = ({ addTodo }) => {
   const [text, setText] = useState("");
 
   return (
@@ -30,3 +30,5 @@ export const InputForm: React.FC<Props> = ({ addTodo }) => {
     </form>
   );
 };
+
+export default InputForm
