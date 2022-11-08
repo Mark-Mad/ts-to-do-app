@@ -4,8 +4,10 @@ export const InputForm: React.FC<Props> = ({ addTodo }) => {
   const [text, setText] = useState("");
 
   return (
-    <form className="form-control">
+    <form className="input-form">
       <input
+        className="input-task"
+        placeholder="hello"
         type="text"
         value={text}
         onChange={(e) => {
@@ -13,7 +15,7 @@ export const InputForm: React.FC<Props> = ({ addTodo }) => {
         }}
       />
       <span>   </span>
-      <button className="badge rounded-pill text-bg-secondary"
+      <button className="btn-hover btn-color"
         type="submit"
         onClick={(e) => {
           e.preventDefault();

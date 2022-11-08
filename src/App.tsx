@@ -1,6 +1,7 @@
 import  { useState } from 'react';
 import { TodoList } from './TodoList';
 import { InputForm } from './InputForm';
+import './App.css'
 
 /* Start with dummy data
 const sampleData: Task[] = [
@@ -37,13 +38,16 @@ function App() {
   };
 
   return (
-    <>
+    <div className='container'>
       <div className="form-control">
-      <h3>To Do App With TypeScript</h3>
+      <h3 className='text'>To Do App With TypeScript</h3>
+
+      <div className="form">
       <InputForm addTodo={add} />
       <TodoList tasks={tasks} toggleTodo={toggleFn} />
       </div>
-    </>
+      </div>
+    </div>
   );
 }
 

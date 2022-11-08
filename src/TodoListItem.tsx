@@ -6,14 +6,17 @@ export const TodoListItem: React.FC<Props2> = ({ todo, toggleTodo }) => {
       <label
         style={{ textDecoration: todo.complete ? 'line-through' : undefined }}
       >
+
+{todo.text}
         <input
+          className='input-checkbox'
           type="checkbox"
           checked={todo.complete}
           onClick={() => {
             toggleTodo(todo);
           }}
         />{' '}
-        {todo.text}
+        
       </label>
     </li>
   );
