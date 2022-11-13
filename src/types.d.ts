@@ -11,7 +11,12 @@ interface Task {
       addTodo: AddFn;
 }
 
-interface Props2 {
+interface ListItem {
   todo: Task;
+  toggleTodo: ToggleTask;
+}
+
+interface ToDoList {
+  tasks: Task[];
   toggleTodo: ToggleTask;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TodoListItem: React.FC<Props2> = ({ todo, toggleTodo }) => {
+const TodoListItem: React.FC<ListItem> = ({ todo, toggleTodo }) => {
   return (
     <li>
       <label

@@ -14,7 +14,7 @@ const InputForm: React.FC<Props> = ({ addTodo }) => {
           setText(e.target.value);
         }}
       />
-      <span>   </span>
+      <span>&nbsp;&nbsp;</span>
       <button className="btn-hover btn-color"
         type="submit"
         onClick={(e) => {

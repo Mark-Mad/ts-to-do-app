@@ -1,12 +1,8 @@
 import React from 'react';
 import TodoListItem  from './TodoListItem';
 
-interface Props {
-  tasks: Task[];
-  toggleTodo: ToggleTask;
-}
 
-const TodoList: React.FC<Props> = ({ tasks, toggleTodo }) => {
+const TodoList: React.FC<ToDoList> = ({ tasks, toggleTodo }) => {
   return (
     <ul>
       {tasks.map((todo) => (
