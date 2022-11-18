@@ -2,29 +2,14 @@ import React, { useState } from "react";
 
 const InputForm: React.FC<Props> = ({ addTodo }) => {
   const [text, setText] = useState("");
+  const id = new Date().getTime()
 
   return (
     <form className="input-form">
-      <input
-        className="input-task"
-        placeholder="hello"
-        type="text"
-        value={text}
-        onChange={(e) => {
-          setText(e.target.value);
-        }}
-      />
+      <input className="input-task" placeholder="hello" type="text" value={text} onChange={(e) => { setText(e.target.value); }} />
       <span>&nbsp;&nbsp;</span>
-      <button className="btn-hover btn-color"
-        type="submit"
-        onClick={(e) => {
-          e.preventDefault();
-          if (text) {
-            addTodo(text);
-            setText("");
-          }
-        }}
-      >
+      <button className="btn-hover btn-color" type="submit" 
+      onClick={(e) => { e.preventDefault(); if (text) { addTodo(text, id); setText(""); } }}>
         Add New Task
       </button>
     </form>

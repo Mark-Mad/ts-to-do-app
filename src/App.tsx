@@ -32,19 +32,24 @@ function App() {
     setTasks(newTodos);
   };
 
-  const add: AddFn = (text: string) => {
-    const newTodo = { text, complete: false };
+  const add: AddFn = (text: string, id:number) => {
+    const newTodo = { text, complete: false, id };
+    console.log(id)
     setTasks([...tasks, newTodo]);
   };
+
+  const remove: RemoveFn = (id: number) => {
+    setTasks(tasks.filter((task: Task): Task | null=> task.id !==id ? task : null))
+  }
 
   return (
     <div className='container'>
       <div className="form-control">
-      <h3 className='text'>To Do App With TypeScript</h3>
+      <h2 className='text'>To Do App With TypeScript</h2>
 
       <div className="form">
       <InputForm addTodo={add} />
-      <TodoList tasks={tasks} toggleTodo={toggleFn} />
+      <TodoList removeTodo={remove} tasks={tasks} toggleTodo={toggleFn} />
       </div>
       </div>
     </div>
